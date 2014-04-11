@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
   	"test": "npm run build && open index.html",
-    "build": "browserify -r d3 -r nvd3 src/index.js > build/common.js; browserify -x d3 -x nvd3 src/page/a.js > build/page/a.js",
-    "postinstall": "bower install nvd3"
+    "build": "browserify -r d3 -r nvd3 -r jquery src/index.js > build/common.js; browserify -x d3 -x nvd3 -x jquery src/page/a.js > build/page/a.js",
+    "postinstall": "bower install nvd3 jquery"
   },
   "author": "JFSIII <JFSIII@JFSIII.org>",
   "license": "MIT",
@@ -21,10 +21,12 @@
       ]
     },
     "browser": {
+      "jquery": "./bower_components/jquery/dist/jquery.js",
       "d3": "./bower_components/d3/d3.js",
       "nvd3": "./bower_components/nvd3/nv.d3.js"
     },
     "browserify-shim": {
+      "jquery": "jQuery",
       "d3": "d3",
       "nvd3": {
         "depends": [
