@@ -1,0 +1,36 @@
+{
+  "name": "browserify-shim-nvd3",
+  "version": "0.0.0",
+  "description": "An isolated example of issues using browserify-shim with nvd3",
+  "main": "src/index.js",
+  "scripts": {
+  	"test": "npm run build && open index.html",
+    "build": "browserify src/index.js > build/index.js",
+    "postinstall": "bower install nvd3"
+  },
+  "author": "JFSIII <JFSIII@JFSIII.org>",
+  "license": "MIT",
+  "dependencies": {
+    "browserify-shim": "^3.4.1",
+    "bower": "^1.3.2",
+    "browserify": "^3.41.0"
+  },
+  "browserify": {
+      "transform": [
+        "browserify-shim"
+      ]
+    },
+    "browser": {
+      "d3": "./bower_components/d3/d3.js",
+      "nvd3": "./bower_components/nvd3/nv.d3.js"
+    },
+    "browserify-shim": {
+      "d3": "d3",
+      "nvd3": {
+        "depends": [
+          "d3"
+        ],
+        "exports": "nv"
+      }
+    }
+}
