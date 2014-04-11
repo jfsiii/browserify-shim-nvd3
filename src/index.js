@@ -1,2 +1,2 @@
-var nv = require('nvd3');
-alert('nv keys:\n\t' + Object.keys(nv).join('\n\t'));
+require('./common');
+alert('index.js: common logic for all pages. e.g., logging');

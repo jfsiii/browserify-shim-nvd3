@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
   	"test": "npm run build && open index.html",
-    "build": "browserify src/index.js > build/index.js",
+    "build": "browserify -r d3 -r nvd3 src/index.js > build/common.js; browserify -x d3 -x nvd3 src/page/a.js > build/page/a.js",
     "postinstall": "bower install nvd3"
   },
   "author": "JFSIII <JFSIII@JFSIII.org>",

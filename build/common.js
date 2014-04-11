@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"PE6Re1":[function(require,module,exports){
 (function (global){
 ;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 d3 = function() {
@@ -9299,11 +9299,9 @@ d3 = function() {
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],2:[function(require,module,exports){
-(function (global){
-
-; require("/Users/jschulz/Sites/browserify-shim-nvd3/bower_components/d3/d3.js");
-;__browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
+},{}],"d3":[function(require,module,exports){
+module.exports=require('PE6Re1');
+},{}],"6S4ZC+":[function(require,module,exports){
 (function(){
 
 var nv = window.nv || {};
@@ -23669,13 +23667,17 @@ nv.models.stackedAreaChart = function() {
   return chart;
 }
 })();
-; browserify_shim__define__module__export__(typeof nv != "undefined" ? nv : window.nv);
-
-}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
-
-}).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"/Users/jschulz/Sites/browserify-shim-nvd3/bower_components/d3/d3.js":1}],3:[function(require,module,exports){
+},{}],"nvd3":[function(require,module,exports){
+module.exports=require('6S4ZC+');
+},{}],5:[function(require,module,exports){
+console.log('common.js: libs to be shared by pages');
+var d3 = require('d3');
 var nv = require('nvd3');
-alert('nv keys:\n\t' + Object.keys(nv).join('\n\t'));
+alert('COMMON: local nv keys:\n\t' + Object.keys(nv).join('\n\t'));
+alert('COMMON: window.nv keys:\n\t' + Object.keys(window.nv).join('\n\t'));
 
-},{"nvd3":2}]},{},[3])
+},{"d3":"PE6Re1","nvd3":"6S4ZC+"}],6:[function(require,module,exports){
+require('./common');
+alert('index.js: common logic for all pages. e.g., logging');
+
+},{"./common":5}]},{},[6])
