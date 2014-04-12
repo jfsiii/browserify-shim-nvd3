@@ -1,4 +1,4 @@
-console.log('common.js: libs to be shared by pages');
+alert('common.js: libs to be shared by pages');
 var d3 = require('d3');
 alert('COMMON: local d3 keys:\n\t' + Object.keys(d3).join('\n\t'));
 if (!Object.keys(d3).length) {
