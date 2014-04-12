@@ -17,5 +17,6 @@ An isolated example of issues using browserify-shim with nvd3
 * `npm install && npm test`
 
 ### Show that external bundles aren't the issue because jQuery and d3 work as expected
-* `git checkout tags/jquery-and-d3-are-shimmed-but-not-nvd3`
+* ~~`git checkout tags/jquery-and-d3-are-shimmed-but-not-nvd3`~~
+* `git checkout -b uses-build-script-two-working-externals-and-one-broken`
 * `npm install && npm test`
